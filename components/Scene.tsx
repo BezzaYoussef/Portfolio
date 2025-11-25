@@ -36,9 +36,7 @@ export default function Scene({ selectedSection, onSectionChange }: SceneProps) 
   const { theme } = useTheme()
 
   // Background: white for light mode, dark for night mode
-  // Canvas background: white for light mode, dark for night mode
   const bodyBgColor = theme === 'night' ? '#0a0a1a' : '#ffffff'
-  const canvasBgColor = theme === 'night' ? 0x0a0a1a : 0xffffff
   
   return (
     <div className="w-full h-full" style={{ background: bodyBgColor, backgroundColor: bodyBgColor }}>
@@ -46,8 +44,7 @@ export default function Scene({ selectedSection, onSectionChange }: SceneProps) 
         gl={{ 
           antialias: true, 
           alpha: false,
-          powerPreference: 'high-performance',
-          clearColor: canvasBgColor
+          powerPreference: 'high-performance'
         }}
         dpr={[1, 2]}
         className="w-full h-full"
